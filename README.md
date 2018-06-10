@@ -20,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+Fs3Cloner::BucketCloner.new(
+  {
+    aws_access_key_id: '123',
+    aws_secret_access_key: '123',
+    bucket: 'bucket_from'
+  },
+  {
+    aws_access_key_id: '123',
+    aws_secret_access_key: '123',
+    bucket: 'bucket_to'
+  }
+).run
+```
 
 ## Development
 
