@@ -32,7 +32,7 @@ Fs3Cloner::BucketCloner.new(
     aws_secret_access_key: '123',
     bucket: 'bucket_to'
   }
-).run
+).clone
 ```
 
 ## Development

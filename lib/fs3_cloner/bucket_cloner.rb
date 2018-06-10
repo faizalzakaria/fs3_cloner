@@ -15,7 +15,7 @@ require 'aws-sdk'
 #     aws_secret_access_key: '123',
 #     bucket: 'bucket_to'
 #   }
-# ).run
+# ).clone
 module Fs3Cloner
   class BucketCloner
     attr_reader :from_bucket, :to_bucket, :logger
