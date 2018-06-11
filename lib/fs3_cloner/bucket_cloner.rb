@@ -58,8 +58,8 @@ module Fs3Cloner
       end
 
       logger.info "Done!"
-      logger.info "Synced #{sync_count}"
-      logger.info "Skipped #{sync_count}"
+      logger.info "Synced #{total_sync}"
+      logger.info "Skipped #{total_skip}"
     end
 
     private
