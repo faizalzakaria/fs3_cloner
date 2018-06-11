@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["fai@code3.io"]
 
   spec.summary       = %q{S3 cloner},
-  spec.description   = %q{S3 cloner},
+  spec.description   = %q{S3 cloner for you to backup your s3 bucket, clone it to a different env etc},
   spec.homepage      = "https://github.com/faizalzakaria/fs3_cloner",
   spec.license       = "MIT"
 
