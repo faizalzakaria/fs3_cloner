@@ -19,7 +19,7 @@ require 'aws-sdk'
 module Fs3Cloner
   class BucketCloner
     attr_reader :from_bucket, :to_bucket, :logger
-    attr_reader :excludes, :includes, :prefixes, :output
+    attr_reader :excludes, :includes, :prefixes, :copy_opts, :output
 
     # options
     # - output        : STDOUT
@@ -78,19 +78,20 @@ module Fs3Cloner
         end
       end
 
-      return sync_count, skip_count
+      [sync_count, skip_count]
     end
 
     def parse_options(options)
-      @output   = options[:output] || STDOUT
-      @excludes = options[:excludes]
-      @includes = options[:includes]
-      @prefixes = options[:prefixes]
+      @output    = options[:output] || STDOUT
+      @excludes  = options[:excludes]
+      @includes  = options[:includes]
+      @prefixes  = options[:prefixes]
+      @copy_opts = options[:copy_opts] || {}
     end
 
     def sync(object)
       logger.debug "Syncing #{pp object}"
-      object.copy_to(to_bucket.object(object.key))
+      object.copy_to(to_bucket.object(object.key), copy_opts)
     end
 
     def skip(object)
