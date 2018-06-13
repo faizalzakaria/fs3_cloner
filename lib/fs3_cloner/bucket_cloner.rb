@@ -109,7 +109,7 @@ module Fs3Cloner
 
     def skip_object?(object)
       false ||
-        object_include?(object) ||
+        !object_include?(object) ||
         object_exclude?(object)
     end
 
