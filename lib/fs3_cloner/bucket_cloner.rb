@@ -122,8 +122,10 @@ module Fs3Cloner
     end
 
     def bucket_from_credentials(credentials)
-      client = Aws::S3::Client.new(access_key_id:      credentials[:aws_access_key_id],
-                                   secret_access_key:  credentials[:aws_secret_access_key])
+      client = Aws::S3::Client.new(
+        access_key_id:      credentials[:aws_access_key_id],
+        secret_access_key:  credentials[:aws_secret_access_key]
+      )
 
       bucket = Aws::S3::Bucket.new(credentials[:bucket], client: client)
 
